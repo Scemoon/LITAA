@@ -10,11 +10,13 @@ class ResultsList(models.Model):
     OS=models.CharField(max_length=20)
     Tester=models.CharField(max_length=20,blank=True)
     TestTime=models.DateField()
+    
     def __unicode__(self):
         return self.Testarch
     
 class Lmbench(models.Model):
     resultID=models.ForeignKey(ResultsList)
+    TestTimes=models.IntegerField()
      
     
     def __unicode__(self):

@@ -1,1 +1,27 @@
-i am lmbench
+<HTML>
+<body>
+<div>
+  <p>Linux Test Result</p>
+</div>
+<div>
+  <form action="." method="get">
+    <label for="q">Search: </label>
+    <select name="query_option">
+       <option selected="selected" value="query_id">ID</option> 
+       <option value="query_os">OS</option>
+    </select>
+    <input type="text" name="q" value="{{ query|escape }}">
+    <input type="submit" value="Search"></form>
+  {% if results %}
+  <ul>
+      <p>test</p>
+    {% for book in results %}
+    <li>{{ book|escape }}</l1>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <P>No Results</P>
+  {% endif %}
+</div>
+</body>
+</HTML>

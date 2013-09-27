@@ -5,7 +5,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
    # url(r'^polls/', include('polls.urls')),
-    url(r'^index/',include('ResultApp.urls')),
+    url(r'^ResultApp/',include('ResultApp.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
