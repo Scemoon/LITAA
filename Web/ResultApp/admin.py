@@ -1,5 +1,5 @@
 from django.contrib import admin
-from ResultApp.models import ResultsList,TestTools,Arch,Lmbench
+from ResultApp.models import ResultsList,Lmbench
 class ResultsAdmin(admin.ModelAdmin):
     fields=['TestTool','Testarch','HWManufactures','CPU','Memory','OS','Tester','TestTime','Other']
     search_fields = ('OS',)
@@ -10,7 +10,5 @@ class LmbenchAdmin(admin.ModelAdmin):
     fields=['ResultsID','TestTimes']
     list_display=('id','ResultsID','TestTimes')
 admin.site.register(ResultsList, ResultsAdmin)
-admin.site.register(TestTools)
-admin.site.register(Arch)
 admin.site.register(Lmbench,LmbenchAdmin)
 
