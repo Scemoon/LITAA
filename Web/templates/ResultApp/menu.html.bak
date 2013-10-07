@@ -117,9 +117,8 @@ function collapse(zap){
 		<li><a href="#">首页</a></li>
 		<li><a onclick="return collapse('link1');" href="#">数据</a>
 			<ul id="link1" class="collapsed">
-				<li id="menu_bar" ><a href="#">lmbench</a></li>
-				<li id="menu_bar"><a href="#" >unixbench</a></li>
-				<li id="menu_bar"><a href="#" >stream</a></li>
+				<li id="menu_bar" ><a href="/context/$">工具测试</a></li>
+				<li id="menu_bar"><a href="#" >bugzilla</a></li>
 			</ul>
 		</li>
 		

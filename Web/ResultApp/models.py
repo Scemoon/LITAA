@@ -29,6 +29,7 @@ class ResultsList(models.Model):
     OS=models.CharField(max_length=100)
     Tester=models.CharField(max_length=20,blank=True)
     TestTime=models.DateField()
+    ResultFile=models.FileField(upload_to='%Y%m%d')
     Other=models.TextField(blank=True)
     
     

@@ -35,13 +35,13 @@ class CreatePaginator(Paginator):
       
 
 # Create your views here.
+#def Index(request):
+  #  return render(request, 'ResultApp/index.html')
+
+#def LeftMenu(request):
+  #  return render(request, 'ResultApp/menu.html')
+
 def Index(request):
-    return render(request, 'ResultApp/index.html')
-
-def LeftMenu(request):
-    return render(request, 'ResultApp/menu.html')
-
-def Context(request):
     query = request.GET.get('q','')
     num_pages=request.GET.get('page','1')
     
@@ -70,4 +70,4 @@ def Context(request):
         results = paginator.page(1)
     except EmptyPage:
         results =paginator.page(paginator.num_pages)
-    return render(request, 'ResultApp/context.html',{"results":results,"query":query,'pages_num':PageJp})
+    return render(request, 'ResultApp/index.html',{"results":results,"query":query,'pages_num':PageJp})
