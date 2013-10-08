@@ -1,28 +1,21 @@
 from django.db import models
 
 # Create your models here.
-#class TestTools(models.Model):
-#    ToolsName = models.CharField(max_length=20)
-#    ToolsDesc = models.TextField(blank=True)
-    
-#    def __unicode__(self):
-#        return self.ToolsName
-#class Arch(models.Model):
-#    HWArch = models.CharField(max_length=20)
-    
-#    def __unicode__(self):
-#        return self.HWArch
+class ArchList(models.Model):
+    ArchName=models.CharField(max_length=20)
+    def __str__(self):
+        return self.ArchName
+   
+class TestTool(models.Model):
+    ToolName=models.CharField(max_length=20)
+    ToolDescription=models.TextField()
+    def __str__(self):
+        return self.ToolName
    
 class ResultsList(models.Model):
-    toolslist=(('lmbench','lmbench'),
-               ('unixbench','unixbench'),
-               ('stream','stream'))
-    archlist=(('x86','X86'),
-              ('x64','X64'),
-              ('mips','mips'))
     ResultsID=models.AutoField(primary_key=True)
-    TestTool=models.CharField(max_length=20,choices=toolslist)
-    Testarch=models.CharField(max_length=20,choices=archlist)
+    ToolName=models.ForeignKey(TestTool)
+    ArchName=models.ForeignKey(ArchList)
     HWManufactures=models.CharField(max_length=100,blank=True)
     CPU=models.CharField(max_length=100)
     Memory=models.CharField(max_length=100)
@@ -31,9 +24,7 @@ class ResultsList(models.Model):
     TestTime=models.DateField()
     ResultFile=models.FileField(upload_to='%Y%m%d')
     Other=models.TextField(blank=True)
-    
-    
-class Lmbench(models.Model):
-    ResultsID=models.OneToOneField(ResultsList)
-    TestTimes=models.IntegerField()
+ 
+
+
     

@@ -34,12 +34,6 @@ class CreatePaginator(Paginator):
     page_range_ext = property(_page_range_ext)
       
 
-# Create your views here.
-#def Index(request):
-  #  return render(request, 'ResultApp/index.html')
-
-#def LeftMenu(request):
-  #  return render(request, 'ResultApp/menu.html')
 
 def Index(request):
     query = request.GET.get('q','')
